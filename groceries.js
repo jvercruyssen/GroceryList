@@ -34,9 +34,16 @@ function addItem() {
     var iconClose = document.createElement("span");
     iconClose.classList.add("glyphicon");
     iconClose.classList.add("glyphicon-remove");
+    btnClose.addEventListener("click", removeParentListItem);
     btnClose.appendChild(iconClose);
     item.appendChild(btnClose);
     item.appendChild(itemName); //plain text element as innerHTML of li element item
     list.appendChild(item); //li element(item) inside the ul
     document.getElementById("newItem").value=""; //clear text
+}
+
+function removeParentListItem(){
+    var mom = this.parentNode;
+    var grandma = mom.parentNode;
+    grandma.removeChild(mom);
 }
