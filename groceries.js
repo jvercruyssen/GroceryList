@@ -56,3 +56,16 @@ function removeParentListItem(){
     myList.splice(itemIndex,1);
     console.log(myList);
 }
+
+function saveList(){
+    var savedList = [];
+    savedList.push(myList.toString());
+    setCookie("cookieList", savedList, 1);
+    console.log(getCookie("cookieList"));
+}
+
+function clearList(){
+    document.getElementById("listDisplay").value="";
+    myList = [];
+    console.log(myList);
+}
